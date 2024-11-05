@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
-public class SafeInput {
+public class SafeInput
+{
 
     /**
      * get a String Val from the user which must be at least one character
@@ -202,4 +203,45 @@ public class SafeInput {
         return retVal;
 
     }
-}
+    /**
+         * Prints a pretty header with a centered message.
+         * @param msg the message to be centered in the header
+         */
+        public static void prettyHeader(String msg) {
+            // Print the top line of asterisks
+            for (int i = 0; i < 60; i++) {
+                System.out.print("*");
+            }
+            System.out.println();
+
+
+            int totalLineWidth = 60;
+            int sideAsterisks = 3;
+            int availableSpace = totalLineWidth - (sideAsterisks * 2); // Space excluding asterisks
+            int msgLength = msg.length();
+            int totalSpaces = availableSpace - msgLength;
+            int leftSpaces = totalSpaces / 2;
+            int rightSpaces = totalSpaces - leftSpaces; // Handles odd totalSpaces
+
+
+            System.out.print("***");
+            for (int i = 0; i < leftSpaces; i++) {
+                System.out.print(" ");
+            }
+            System.out.print(msg);
+            for (int i = 0; i < rightSpaces; i++) {
+                System.out.print(" ");
+            }
+            System.out.print("***");
+            System.out.println();
+
+
+            for (int i = 0; i < 60; i++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+
+
